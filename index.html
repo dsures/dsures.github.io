@@ -1,1 +1,220 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Darvin Sureskumar: data and AI projects for regulated manufacturing</title>
+<meta name="description" content="Featured projects by Darvin Sureskumar, a data and AI engineer working in regulated manufacturing, with code and video walkthroughs.">
+<style>
+  :root {
+    --paper: #f3f5f6;
+    --ink: #17232b;
+    --muted: #55656f;
+    --rule: #c9d2d8;
+    --link: #1f5fa8;
+    --warn: #b86e00;
+    --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --sans: ui-sans-serif, "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #11181d;
+      --ink: #e8edf0;
+      --muted: #9dabb4;
+      --rule: #2b3a44;
+      --link: #7db2f0;
+      --warn: #e3a33b;
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .wrap {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 3rem 1.25rem 4rem;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+  h1 { font-size: clamp(2rem, 6vw, 2.75rem); letter-spacing: -0.01em; }
+  h2 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+  h3 { font-size: 1.2rem; }
+
+  p { margin: 0; }
+
+  a { color: var(--link); text-underline-offset: 0.2em; }
+  a:hover { text-decoration-thickness: 2px; }
+  a:focus-visible {
+    outline: 3px solid var(--link);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .intro { margin-top: 1rem; max-width: 36rem; }
+  .intro p + p { margin-top: 0.5rem; color: var(--muted); }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* Illustration */
+  figure.trace { margin: 2.5rem 0 3rem; }
+  figure.trace svg { display: block; width: 100%; height: auto; }
+  figure.trace figcaption {
+    margin-top: 0.5rem;
+    max-width: 36rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .trace-line {
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .trace-line { animation: draw 2.4s ease-out 0.2s both; }
+    @keyframes draw {
+      from { stroke-dashoffset: 1; }
+      to   { stroke-dashoffset: 0; }
+    }
+  }
+  .band { fill: var(--warn); opacity: 0.16; }
+  .fail { stroke: var(--warn); stroke-width: 2; stroke-dasharray: 5 4; }
+  .svg-label { fill: var(--ink); font-family: var(--sans); font-size: 13px; }
+  .svg-label.warn { fill: var(--warn); font-weight: 600; }
+
+  /* Projects */
+  .projects { margin-top: 0.5rem; padding: 0; list-style: none; }
+  .project { padding: 1.5rem 0; border-top: 1px solid var(--rule); }
+  .project:last-child { border-bottom: 1px solid var(--rule); }
+  .project p { margin-top: 0.5rem; max-width: 38rem; }
+  .project .stack { color: var(--muted); font-size: 0.9rem; }
+  .project .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    margin-top: 0.75rem;
+    font-weight: 600;
+  }
+
+  footer { margin-top: 2.5rem; color: var(--muted); font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Darvin Sureskumar</h1>
+    <div class="intro">
+      <p>Data and AI engineer in regulated manufacturing. I build the pipelines, analytics and AI that turn plant and quality data into decisions, at Roche and Tata Consultancy Services.</p>
+      <p>Each project below has its code and a short video walkthrough.</p>
+    </div>
+    <ul class="contact">
+      <li><a href="https://github.com/dsures" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/darvin-sures/" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </header>
+
+  <figure class="trace">
+    <svg viewBox="0 0 720 230" role="img" aria-labelledby="trace-title trace-desc">
+      <title id="trace-title">A sensor reading drifting upward before a failure</title>
+      <desc id="trace-desc">An illustration: a sensor reading drifts upward during a 48-hour warning window, reaches a failure marker, then returns to its normal level after maintenance.</desc>
+      <rect class="band" x="380" y="36" width="180" height="154"></rect>
+      <line class="fail" x1="560" y1="36" x2="560" y2="190"></line>
+      <text class="svg-label warn" x="388" y="56">48-hour warning window</text>
+      <text class="svg-label" x="566" y="56">Failure</text>
+      <polyline class="trace-line" pathLength="1" points="20,158 34,166 48,152 62,163 76,155 90,168 104,150 118,161 132,154 146,165 160,149 174,158 188,147 202,160 216,146 230,155 244,143 258,156 272,141 286,152 300,138 314,150 328,134 342,146 356,131 370,143 384,124 398,138 412,116 426,130 440,108 454,124 468,100 482,116 496,92 510,108 524,84 538,98 552,76 560,80 574,172 588,160 602,170 616,158 630,168 644,157"></polyline>
+    </svg>
+    <figcaption>The idea behind my dissertation: a sensor drifts before a component fails, and the warning window is the time to act. This is an illustration, not real data.</figcaption>
+  </figure>
+
+  <main>
+    <h2>Featured projects</h2>
+    <ul class="projects">
+
+      <li class="project">
+        <h3>Predictive maintenance analytics framework (MSc dissertation)</h3>
+        <p>Survival analysis, sensor and error-code signatures and machine learning on 876,100 hourly readings from 100 machines, to recommend a maintenance strategy for each component. The data is the public synthetic Microsoft Azure Predictive Maintenance dataset. Random Forest reached an F1 of 0.96 in cross-validation.</p>
+        <p class="stack">Python, scikit-learn, XGBoost, lifelines, SHAP</p>
+        <p class="links">
+          <a href="https://youtu.be/nmoiPfvG56M" rel="noopener">Video</a>
+          <a href="https://docs.google.com/document/d/1miI608t3qoFtsUotw4_z4XhqvkzsKflq9xboRP3oslQ/edit?usp=sharing" rel="noopener">Dissertation</a>
+        </p>
+      </li>
+
+      <li class="project">
+        <h3>Azure predictive maintenance data platform</h3>
+        <p>The data platform for the same dataset. It runs on Azure and Databricks (PySpark, medallion architecture, CI/CD) and turns about 876K telemetry records into failure-prediction features, with data quality audit logging and a Power BI report.</p>
+        <p class="stack">Azure, Databricks, PySpark, Power BI</p>
+        <p class="links">
+          <a href="https://www.youtube.com/watch?v=Ad-O1w12zVk" rel="noopener">Video</a>
+          <a href="https://github.com/dsures/azure-pdm-platform-vvp" rel="noopener">Code</a>
+        </p>
+      </li>
+
+      <li class="project">
+        <h3>Pharma MES batch and OEE reporting</h3>
+        <p>Brings fragmented manufacturing systems (OEE, batch data and laboratory quality data) into dimensional reporting models and Metabase dashboards. It standardises KPIs and cut the main transform from 468 to 178 seconds, a 62% reduction.</p>
+        <p class="stack">dbt, Azure SQL, Metabase, GitHub Actions</p>
+        <p class="links">
+          <a href="https://youtu.be/7NPde5y939Q" rel="noopener">Video</a>
+          <a href="https://github.com/dsures/pharma-mes-batch-oee-reporting-vvp1" rel="noopener">Code</a>
+        </p>
+      </li>
+
+      <li class="project">
+        <h3>Healthcare data pipeline (FHIR)</h3>
+        <p>A Snowflake ELT pipeline built with dbt and Prefect. It maps patient and visit data to FHIR R4 and a star schema, with data quality tests and PII masking. The visit data is synthetic.</p>
+        <p class="stack">Snowflake, dbt, Prefect, FHIR R4</p>
+        <p class="links">
+          <a href="https://www.youtube.com/watch?v=4XymtrE7Zqw" rel="noopener">Video</a>
+          <a href="https://github.com/dsures/health-data-pipeline" rel="noopener">Code</a>
+        </p>
+      </li>
+
+      <li class="project">
+        <h3>Shop-floor agentic AI diagnostics</h3>
+        <p>Machine telemetry flows over MQTT to an AI agent that diagnoses faults and retrieves guidance from standard operating procedures (RAG). It runs in containers with Docker Compose.</p>
+        <p class="stack">MQTT, RAG, Docker Compose</p>
+        <p class="links">
+          <a href="https://youtu.be/GKa9wmsUUSs" rel="noopener">Video</a>
+          <a href="https://github.com/dsures/mfg_agentic_ai_diagnostics" rel="noopener">Code</a>
+        </p>
+      </li>
+
+    </ul>
+  </main>
+
+  <footer>
+    <p>More work on <a href="https://github.com/dsures?tab=repositories" rel="noopener">GitHub</a>.</p>
+  </footer>
+
+</div>
+</body>
+</html>
